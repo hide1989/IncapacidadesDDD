@@ -42,7 +42,8 @@ public class ReporteEventChange extends EventChange {
         });
 
         apply((FechaYEnfermedadCertificadoActualizadas event) -> {
-
+            var rutaCertificado=reporte.certificadoIncapacidad.value().getRutaCertificado();
+            reporte.certificadoIncapacidad=new CertificadoIncapacidad(rutaCertificado,event.getEnfermedad(),event.getFechaInicio(),event.getFechaFin());
         });
     }
 }

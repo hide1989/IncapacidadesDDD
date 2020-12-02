@@ -14,7 +14,7 @@ public class FechaYEnfermedadCertificadoActualizadas extends DomainEvent {
     private final Date fechaFin;
     private final ReporteIncapacidadId reporteId;
 
-        public FechaYEnfermedadCertificadoActualizadas(Enfermedad enfermedad,Date fechaInicio, Date fechaFin,ReporteIncapacidadId reporteId) {
+    public FechaYEnfermedadCertificadoActualizadas(Enfermedad enfermedad,Date fechaInicio, Date fechaFin,ReporteIncapacidadId reporteId) {
         super("incapacidad.CertificadoActualizado");
         this.enfermedad=enfermedad;
         this.fechaInicio=fechaInicio;
