@@ -52,4 +52,5 @@ public class CertificadoIncapacidad implements ValueObject<CertificadoIncapacida
         Enfermedad getEnfermedad();
     }
 
+
 }

@@ -14,17 +14,17 @@ public class ReporteIncapacidad extends AggregateEvent<ReporteIncapacidadId> {
     protected Sofkiano sofkiano;
     protected TipoIncapacidad tipoIncapacidad;
     protected CertificadoIncapacidad certificadoIncapacidad;
-    protected boolean prorroga;
+    protected boolean esProrroga;
     protected HistoriaClinica historiaClinica;
     protected InfoEstado infoEstado;
     protected Date fechaActual;
     protected List<CertificadoIncapacidad> listadoProrroga;
+    protected Boolean esRevokado;
 
 
-    public ReporteIncapacidad(ReporteIncapacidadId id,Sofkiano sofkiano,TipoIncapacidad tipoIncapacidad, boolean prorroga,CertificadoIncapacidad certificadoIncapacidad, HistoriaClinica historiaClinica) {
+    public ReporteIncapacidad(ReporteIncapacidadId id,Sofkiano sofkiano,TipoIncapacidad tipoIncapacidad, boolean esProrroga,CertificadoIncapacidad certificadoIncapacidad, HistoriaClinica historiaClinica) {
         super(id);
-        appendChange(new ReporteCreado( id, sofkiano,tipoIncapacidad,prorroga,certificadoIncapacidad,historiaClinica)).apply();
-
+        appendChange(new ReporteCreado( id, sofkiano,tipoIncapacidad,esProrroga,certificadoIncapacidad,historiaClinica)).apply();
     }
 
     private ReporteIncapacidad(ReporteIncapacidadId id) {
@@ -38,12 +38,12 @@ public class ReporteIncapacidad extends AggregateEvent<ReporteIncapacidadId> {
         return reporte;
     }
 
-    public void cambiarEstado(){
-        appendChange(new EstadoCambiado()).apply();
+    public void cambiarEstado(InfoEstado infoEstado){
+        appendChange(new EstadoCambiado(infoEstado)).apply();
     }
 
-    public void actualizarCertificado(){
-        appendChange(new CertificadoActualizado()).apply();
+    public void actualizarFechasYEnfermedadCertificado(Enfermedad enfermedad,Date fechaInicio, Date fechaFin,ReporteIncapacidadId reporteId){
+        appendChange(new FechaYEnfermedadCertificadoActualizadas(enfermedad,fechaInicio,fechaFin,reporteId)).apply();
     }
 
     public void enviarCorreoPorEstadoNoValido(){
@@ -70,8 +70,5 @@ public class ReporteIncapacidad extends AggregateEvent<ReporteIncapacidadId> {
         appendChange(new IncapacidadRevocada(id)).apply();
     }
 
-    public void guardarProrrogaEnReporteBase(){
-
-    }
 
 }

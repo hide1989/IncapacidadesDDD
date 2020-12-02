@@ -22,16 +22,6 @@
         </dependency>
 
 
-        <dependency>
-            <groupId>co.com.sofka</groupId>
-            <artifactId>business</artifactId>
-            <version>0.7.6</version>
-        </dependency>
-        <dependency>
-            <groupId>co.com.sofka</groupId>
-            <artifactId>infrastructure</artifactId>
-            <version>0.7.6</version>
-        </dependency>
        
     </dependencies>
 

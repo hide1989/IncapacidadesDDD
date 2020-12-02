@@ -20,6 +20,23 @@
         <version>1.7.0</version>
         <scope>test</scope>
     </dependency>
+
+    <dependency>
+        <groupId>co.com.sofka</groupId>
+        <artifactId>business</artifactId>
+        <version>0.7.6</version>
+    </dependency>
+    <dependency>
+        <groupId>co.com.sofka</groupId>
+        <artifactId>infrastructure</artifactId>
+        <version>0.7.6</version>
+    </dependency>
+    <dependency>
+        <groupId>io.projectreactor</groupId>
+        <artifactId>reactor-core</artifactId>
+        <version>3.4.0</version>
+    </dependency>
+
     <dependency>
         <groupId>org.junit.jupiter</groupId>
         <artifactId>junit-jupiter-engine</artifactId>
