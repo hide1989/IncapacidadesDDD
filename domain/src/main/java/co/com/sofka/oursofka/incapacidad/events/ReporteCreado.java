@@ -9,7 +9,7 @@ public class ReporteCreado extends DomainEvent {
     private  Sofkiano sofkiano;
     private TipoIncapacidad tipoIncapacidad;
     private  boolean prorroga;
-    private  HistoriaClinica historiaClinica;
+    private HistoriaClinicaUrl historiaClinicaUrl;
     private  CertificadoIncapacidad certificadoIncapacidad;
 
 
@@ -18,11 +18,11 @@ public class ReporteCreado extends DomainEvent {
         super(type);
     }
 
-    public ReporteCreado(ReporteIncapacidadId id, Sofkiano sofkiano, TipoIncapacidad tipoIncapacidad, boolean prorroga, CertificadoIncapacidad certificadoIncapacidad,HistoriaClinica historiaClinica) {
+    public ReporteCreado(ReporteIncapacidadId id, Sofkiano sofkiano, TipoIncapacidad tipoIncapacidad, boolean prorroga, CertificadoIncapacidad certificadoIncapacidad, HistoriaClinicaUrl historiaClinicaUrl) {
         super("incapacidad.ReporteCreado");
         this.reporteId=id;
         this.certificadoIncapacidad=certificadoIncapacidad;
-        this.historiaClinica=historiaClinica;
+        this.historiaClinicaUrl = historiaClinicaUrl;
         this.prorroga=prorroga;
         this.sofkiano=sofkiano;
         this.tipoIncapacidad=tipoIncapacidad;
@@ -45,8 +45,8 @@ public class ReporteCreado extends DomainEvent {
         return prorroga;
     }
 
-    public HistoriaClinica getHistoriaClinica() {
-        return historiaClinica;
+    public HistoriaClinicaUrl getHistoriaClinica() {
+        return historiaClinicaUrl;
     }
 
     public CertificadoIncapacidad getCertificadoIncapacidad() {

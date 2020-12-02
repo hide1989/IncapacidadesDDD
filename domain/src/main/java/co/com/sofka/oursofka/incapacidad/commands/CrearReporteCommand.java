@@ -3,24 +3,24 @@ package co.com.sofka.oursofka.incapacidad.commands;
 import co.com.sofka.domain.generic.Command;
 import co.com.sofka.oursofka.incapacidad.vo.*;
 
-import java.util.Date;
-
 public class CrearReporteCommand implements Command {
     private Sofkiano sofkiano;
     private TipoIncapacidad tipoIncapacidad;
     private CertificadoIncapacidad certificadoIncapacidad;
-    private HistoriaClinica historiaClinica;
+    private HistoriaClinicaUrl historiaClinicaUrl;
     private Boolean esProrroga;
 
-    public CrearReporteCommand(Sofkiano sofkiano, TipoIncapacidad tipoIncapacidad, Boolean esProrroga, CertificadoIncapacidad certificadoIncapacidad, HistoriaClinica historiaClinica) {
+    public CrearReporteCommand(Sofkiano sofkiano, TipoIncapacidad tipoIncapacidad, Boolean esProrroga, CertificadoIncapacidad certificadoIncapacidad, HistoriaClinicaUrl historiaClinicaUrl) {
         this.sofkiano = sofkiano;
         this.tipoIncapacidad = tipoIncapacidad;
         this.esProrroga = esProrroga;
         this.certificadoIncapacidad = certificadoIncapacidad;
-        this.historiaClinica = historiaClinica;
+        this.historiaClinicaUrl = historiaClinicaUrl;
     }
 
+    public CrearReporteCommand(){
 
+    }
 
 
     public CertificadoIncapacidad getCertificadoIncapacidad() {
@@ -28,8 +28,8 @@ public class CrearReporteCommand implements Command {
     }
 
 
-    public HistoriaClinica getHistoriaClinica() {
-        return historiaClinica;
+    public HistoriaClinicaUrl getHistoriaClinica() {
+        return historiaClinicaUrl;
     }
 
 

@@ -16,7 +16,7 @@ public class ReporteEventChange extends EventChange {
         apply((ReporteCreado event) -> {
             reporte.tipoIncapacidad = event.getTipoIncapacidad();
             reporte.certificadoIncapacidad = event.getCertificadoIncapacidad();
-            reporte.historiaClinica = event.getHistoriaClinica();
+            reporte.historiaClinicaUrl = event.getHistoriaClinica();
             reporte.esProrroga = event.isProrroga();
             reporte.sofkiano = event.getSofkiano();
             reporte.listadoProrroga = new ArrayList<>();

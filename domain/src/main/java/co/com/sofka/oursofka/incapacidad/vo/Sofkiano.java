@@ -10,8 +10,8 @@ public class Sofkiano implements ValueObject<Sofkiano.Props>{
     private final String correo;
     private final String eps;
     private final String empresa;
-    private Rol rol;
-    private TipoDocumento tipoDocumento;
+    private final Rol rol;
+    private final TipoDocumento tipoDocumento;
 
     public Sofkiano(String idSofkiano, Nombre nombre, String correo, String eps, String empresa, Rol rol, TipoDocumento tipoDocumento ){
         this.idSofkiano = idSofkiano;
